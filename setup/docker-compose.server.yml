@@ -1,0 +1,13 @@
+# Docker-compose file for server
+
+version: "3.9"
+
+services:
+  backend_db:
+    image: mongo:6.0
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./tmp/backend_db:/data/db
+    restart: always
+    hostname: backend-db
